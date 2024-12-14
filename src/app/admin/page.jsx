@@ -1,17 +1,20 @@
 'use client'
-import React from 'react'
-import { useUser } from '@clerk/nextjs'
+import LoadingPage from '@/component/loading'
 import LogoutButton from '@/component/logout'
+import { SignOutButton, UserButton, UserProfile } from '@clerk/clerk-react'
+import { useUser } from '@clerk/nextjs'
+import React from 'react'
 
 const page = () => {
-    const {user}=useUser()
-    console.log(user)
-  return (
-    <div>
-        <h1>Home Page</h1>
-        <p>Welcome Admin {user?.fullName}!</p>
-        <LogoutButton/>
+  const {user}=useUser()
   
+  if (!user) return <LoadingPage/>
+  return (
+    
+    <div>
+      <UserButton/>
+      <LogoutButton/>
+        <h2>Admin user {user?.fullName}</h2>
       
     </div>
   )
