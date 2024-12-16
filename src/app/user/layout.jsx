@@ -1,6 +1,6 @@
 import React from 'react'
 
-const layout = ({children, left}) => {
+const userLayout = ({children, left}) => {
   return (
     <>
         {children}
@@ -12,4 +12,4 @@ const layout = ({children, left}) => {
   )
 }
 
-export default layout
+export default userLayout

@@ -1,27 +1,29 @@
 'use client';
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
-import LoadingPage from "./loading";
+import LoadingPage from "./loading"; // LoadingPage for loading state
+import UserLayout from "@/app/user/layout"; // Import UserLayout
 
 export default function RoleRedirect() {
-  const { user } = useUser(); // Fetch the current user's data
+  const { user, isLoaded } = useUser(); // Fetch the current user's data and loading state
   const router = useRouter(); // Access the router for navigation
 
   useEffect(() => {
-    if (!user) return; // Wait until the user data is available
 
-    const role = user?.publicMetadata?.role || "user"; // Default role
+    // No user, so don't do anything
+    if (!user) return;
+
+    const role = user?.publicMetadata?.role || "user"; // Default role to "user"
 
     // Role-based redirection
-    if (role === "admin") {
-      router.push("/admin"); // Redirect to the admin route
-    } else {
-      router.push("/user"); // Redirect to the user home route
+    if (role === "teacher") {
+      router.push("/teacher"); // Redirect to the teacher route
     }
+
+    // Set loading state to false once redirection logic is executed
   }, [user, router]);
 
-  // Display a loading state while processing
-  return <LoadingPage/>
+
 }
