@@ -12,12 +12,11 @@ const Page = () => {
 
 
   return (
-    <div>
+    <>
       <LogoutButton/>
       <h2>Authenticated User Page</h2>
       <p>Welcome, {user?.fullName || 'User'}!</p>
-      {/* You can display more user information here */}
-    </div>
+    </>
   )
 }
 

@@ -1,12 +1,11 @@
 import React from 'react'
-
-const userLayout = ({children, left}) => {
+import DynamicNavbar from '@/component/DynamicNavbar'
+const userLayout = ({children}) => {
   return (
     <>
-        {children}
+        <DynamicNavbar children={children}/>
       
 
-        {left}
 
     </>
   )

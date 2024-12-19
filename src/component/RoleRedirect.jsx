@@ -20,6 +20,8 @@ export default function RoleRedirect() {
     // Role-based redirection
     if (role === "teacher") {
       router.push("/teacher"); // Redirect to the teacher route
+    }else{
+      router.push('/user')
     }
 
     // Set loading state to false once redirection logic is executed

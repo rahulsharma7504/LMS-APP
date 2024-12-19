@@ -1,12 +1,16 @@
-import Header from '@/component/layout/Header'
+import DynamicNavbar from '@/component/DynamicNavbar'
+import { UserButton } from '@clerk/nextjs'
 import React from 'react'
+import Footer from './_components/Footer'
 
 const layout = ({children}) => {
   return (
     <>
-    <Header/>
-    <h1>Teacher Layout</h1>
-    {children}
+    <header>
+    <DynamicNavbar children={children}/>
+
+    </header>
+    <Footer/>
       
     </>
   )

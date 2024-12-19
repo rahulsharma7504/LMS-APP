@@ -6,8 +6,8 @@ const page = () => {
   const {user}=useUser()
   return (
     <>
-
-      <UserButton/>
+    <h2>Main page</h2>
+      
     </>
   )
 }
