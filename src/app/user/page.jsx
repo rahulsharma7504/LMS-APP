@@ -1,7 +1,7 @@
 'use client'
 
 import LoadingPage from '@/component/loading'
-import LogoutButton from '@/component/logout'
+import LogoutButton from '@/component/Logout'
 import { useUser } from '@clerk/nextjs'
 import React from 'react'
 

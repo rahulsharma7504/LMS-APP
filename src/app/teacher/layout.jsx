@@ -10,7 +10,6 @@ const layout = ({children}) => {
     <DynamicNavbar children={children}/>
 
     </header>
-    <Footer/>
       
     </>
   )

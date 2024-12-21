@@ -1,10 +1,11 @@
-// components/LoadingPage.js
 import React from 'react';
-
+import '@/component/Styles/loading.css'
 const LoadingPage = () => {
   return (
     <div style={styles.container}>
-      <div style={styles.spinner}></div>
+      <div style={styles.spinner}>
+        <span style={styles.emoji}>⏳</span>
+      </div>
       <h2 style={styles.text}>Loading, please wait...</h2>
     </div>
   );
@@ -26,6 +27,13 @@ const styles = {
     borderTop: '5px solid #0070f3',
     borderRadius: '50%',
     animation: 'spin 1s linear infinite',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  emoji: {
+    fontSize: '24px',
+    animation: 'spinEmoji 1s linear infinite',
   },
   text: {
     marginTop: '20px',
